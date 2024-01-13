@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-show',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./show.component.scss']
 })
 export class ShowComponent implements OnInit {
+  isActive:boolean=false;
+  profileval:boolean=false;
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
+  }
+  menu(){
+    console.log("jkhdjfk")
+    this.isActive=true
+  }
+
+  profileFun(){
+    this.profileval=!this.profileval;
+
+  }
+
+
+  signin(){
+    this.router.navigate(['/auth/signin'])
   }
 
 }

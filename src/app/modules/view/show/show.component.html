@@ -1,6 +1,9 @@
 <!-- <p>show works!</p> -->
 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #76b9e2;">
+    <div>
+ <button (click)="menu()">menu</button> 
+    </div>
     <div class="container-fluid">
         <img src="../../../../assets/shop-icon.jpg">
       <!-- <a class="navbar-brand" href="#">Navbar</a> -->
@@ -10,29 +13,30 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">MEN</a>
+            <a class="nav-link active" aria-current="page"  data-bs-toggle="modal" data-bs-target="#exampleModal">MEN</a>
           </li>
+         
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">WOMEN</a>
+            <a class="nav-link active" aria-current="page"data-bs-toggle="modal" data-bs-target="#exampleModal1" >WOMEN</a>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">KIDS</a>
+            <a class="nav-link active" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal2">KIDS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">HOME & LIVING</a>
+            <a class="nav-link active" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal3">HOME & LIVING</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">BEAUTY</a>
+            <a class="nav-link active" aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal4">BEAUTY</a>
           </li>
         </ul>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <input class="form-control me-2" type="search" placeholder="Search for products,brands and more" aria-label="Search" >
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
 
         <div class="nav-item">
-         <img src="../../../../assets/profile-icon.png">
+         <img src="../../../../assets/profile-icon.png" (click)="profileFun()">
           </div>
           <div class="nav-item">
             <img src="../../../../assets/wishlist-icon.png">
@@ -43,3 +47,445 @@
       </div>
     </div>
   </nav>
+
+<div *ngIf="profileval" class="profileDiv">
+ <h4>Welcome</h4>
+ <p>To access account and manage orders</p>
+ <div>
+  <button mat-stroked-button color="accent" (click)="signin()">SIGNIN / SIGNUP</button>
+ </div>
+ <div>
+  <p>Cras justo odio</p>
+  <p>Dapibus ac facilisis in</p>
+  <p>Morbi leo risus</p>
+  <p>Porta ac consectetur ac</p>
+  <p>Vestibulum at eros</p>
+ </div>
+ 
+ 
+
+</div>
+  
+
+  <div id="main" [ngClass]="{'active':isActive}">
+    <div class="overlay-shadow"></div>
+    <div class="main-menu">
+
+    </div>
+  </div>
+
+  <!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal 1-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+       
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    
+                  <div class="col-md-4">
+                    
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- modal2 -->
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+           
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+       
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    
+                  <div class="col-md-4">
+                    
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- modal3 -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+       
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    
+                  <div class="col-md-4">
+                    
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- modal4 -->
+  <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+         
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+       
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    
+                  <div class="col-md-4">
+                    
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+   <!-- modal5 -->
+   <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+       
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+       
+        <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    
+                  <div class="col-md-4">
+                    
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                  <div class="col-md-4 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 ms-auto">
+                     
+                   <ul>
+                    <li>Topwear</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                    <li>T-Shirts</li>
+                   </ul>
+                
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
