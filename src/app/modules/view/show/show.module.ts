@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ShowComponent } from './show.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialModule } from 'src/app/shared/material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes:Routes=[
   {
@@ -24,7 +25,9 @@ const routes:Routes=[
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ShowModule { }

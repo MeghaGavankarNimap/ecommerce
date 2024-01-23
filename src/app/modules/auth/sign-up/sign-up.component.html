@@ -1,34 +1,63 @@
 <!-- <p>sign-up works!</p> -->
 <div class="sigin">
     <h3 class="signin-head">Sign Up</h3>
-    <div>
+    <form [formGroup]="signUp" (ngSubmit)="submit()">
+    <div class="container">
         <label for="name">Your name</label>
-        <input type="text" class="input-signin" id="name">
+        <input type="text" class="input-signin" id="name" formControlName="name" required>
+         <div *ngIf="signUp.controls.name.touched && signUp.controls.name.invalid"> 
+          <mat-error>Enter your name</mat-error>
+        </div> 
+       
     </div>
 
-    <div>
+    <div class="container">
         <label for="name">Mobile number</label>
-        <input type="text" class="input-signin" id="name">
+        <input type="text" class="input-signin" id="mobileNo" formControlName="mobileNo">
+        <div *ngIf="signUp.controls.mobileNo.touched && signUp.controls.mobileNo.invalid">
+          <mat-error>Enter your mobile number</mat-error>
+        </div>
+        <div *ngIf="signUp.controls.mobileNo.hasError('minlength')">
+          <mat-error>Mobile number should be 10 digits</mat-error>
+        </div>
+        <div *ngIf="signUp.controls.mobileNo.hasError('maxlength')">
+          <mat-error>Mobile number should be 10 digits</mat-error>
+        </div>
+        <div *ngIf="signUp.controls.mobileNo.hasError('pattern')">
+          <mat-error>Please Enter Valid mobile number</mat-error>
+        </div>
+       
     </div>
 
-    <div>
+    <div class="container">
         <label for="name">Email</label>
-        <input type="text" class="input-signin" id="name">
+        <input type="text" class="input-signin" id="email" formControlName="email">
+       
     </div>
 
-    <div>
+    <div class="container">
         <label for="name">Password</label>
-        <input type="text" class="input-signin" id="name">
+        <input type="text" class="input-signin" id="Password" formControlName="Password">
+        <div *ngIf="signUp.controls.Password.touched && signUp.controls.Password.invalid">
+          <mat-error>Enter your Password</mat-error>
+        </div>
+        <div *ngIf="signUp.controls.Password.hasError('pattern')">
+          <mat-error>
+            Password pattern is invalid
+          </mat-error>
+        </div>
+       
     </div>
     
-  
+
     <div class="info">
       <h5>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</h5>
       <h5 class="new">New to app</h5>
     </div>
    
     <div class="create-signUp">
-      <button type="button" class="btn btn-outline-danger" (click)="SignUP()">SignUP</button>
+      <button type="submit" class="btn btn-outline-danger" >SignUP</button>
     
     </div>
+  </form>
   </div>

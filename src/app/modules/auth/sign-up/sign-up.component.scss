@@ -4,12 +4,12 @@
 .sigin{
     color:black;
     border: 1px solid black;
-    height: 25rem;
+    height: 32rem;
      width: 20rem;
      margin: auto;
      width: 25%;
      padding: 2rem;
-     margin-top: 44px;
+     margin-top: 48px;
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -23,7 +23,8 @@
  }
  
  .create-signUp{
-     margin-top: 25px;
+     margin-top: 2px;
+     margin-left: 5rem;
      
  }
  
@@ -37,10 +38,12 @@
  
  .input-signin{
      width: 14rem;
+     margin-top: 7px;
  }
  
  .info{
      margin-top: 20px;
+     margin-left: 12px
  }
  
  .new{

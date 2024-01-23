@@ -49,10 +49,16 @@
 }
 
 .profileDiv{
-    // background: rgb(117, 104, 104);
-    margin-left: 59rem;
-    /* margin-top: 1rem; */
-    margin-right: 3rem;
+    left: 58rem;
+    /* margin-left: 59rem; */
+    /* margin-right: 3rem; */
     height: 21rem;
-    width: 19rem;
+    width: 279px;
+    position: absolute;
+    border: 1px solid black;
+    // Paddding: 25px 20px 15px;
+}
+
+.carouselExampleIndicators{
+    position: absolute;
 }

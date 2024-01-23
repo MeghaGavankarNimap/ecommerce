@@ -1,13 +1,34 @@
 <!-- <p>sign-in works!</p> -->
 <div class="sigin">
   <h3 class="signin-head">Sign In</h3>
-  
-  <label>Email Or mobile phone number</label>
-  <input type="text" class="input-signin">
+  <form [formGroup]="signinForm" (ngSubmit)="subSignIn()">
+
+ 
+  <div class="container">
+    <label for="name">Mobile number</label>
+    <input type="text" class="input-signin" id="mobileNo" formControlName="mobileNo">
+    <div *ngIf="signinForm.controls.mobileNo.touched && signinForm.controls.mobileNo.invalid">
+      <mat-error>Enter your mobile number</mat-error>
+    </div>
+   
+</div>
+
+<div class="container">
+  <label for="name">Password</label>
+  <input type="text" class="input-signin" id="Password" formControlName="Password">
+  <div *ngIf="signinForm.controls.Password.touched && signinForm.controls.Password.invalid">
+    <mat-error>Enter your Password</mat-error>
+  </div>
+ 
+</div>
+
+
   <div class="continue">
-    <button type="button" class="btn btn-outline-danger">Continue</button>
+    <button type="submit" class="btn btn-outline-danger">Sign in</button>
    
   </div>
+
+</form>
   <div class="info">
     <h5>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</h5>
     <h5 class="new">New to app</h5>
